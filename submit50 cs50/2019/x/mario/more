@@ -1,0 +1,43 @@
+#include <cs50.h>
+#include <stdio.h>
+
+
+int getHeight()
+{
+    int a; 
+    do
+    {
+       a = get_int("Height: ");
+    }
+    while(a < 0 || a > 8);
+    return a;
+}
+
+
+int main (void)
+{      
+    int height = getHeight();
+
+    int width = 0;
+
+    for(width = 0; width < height; width++){
+        
+    int espacios = height - width;
+    
+     for(int j = 0; j < espacios; j++) {
+      printf(" ");
+    }  
+    
+    for(int j = 0; j < width; j++) {
+      printf("#");
+    }  
+  
+    printf("  ");
+    
+    for(int j = 0; j < width; j++) {
+      printf("#");
+    }
+    printf("\n");
+    }
+
+}
