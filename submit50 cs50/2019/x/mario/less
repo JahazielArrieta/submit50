@@ -1,0 +1,35 @@
+#include <cs50.h>
+#include <stdio.h>
+
+//Function to get the height of the pyramid
+
+int getHeight()
+{
+    int a; 
+    do
+    {
+       a = get_int("Height: ");
+    }
+    while(a < 0 || a > 8);
+    return a;
+}
+int main (void)
+{
+    int height = getHeight();
+    int width = 0;
+//settig width in base of the height
+    for(width = 0; width <= height; width++)
+    {
+//width + space = height, so:
+        int space = height - width;
+        for(int i = 0; i < space; i++)
+        {
+            printf(" ");
+        }
+        for(int j = 0; j < width; j++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
